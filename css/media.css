@@ -20,6 +20,8 @@
     nav .links {
         gap: 0 3.75rem;
     }
+
+    
 }
 
 @media (min-width: 992px) {
@@ -27,9 +29,18 @@
         max-width: 970px;
     }
 
+    .welcome-inner {
+        text-align: left;
+    }
+
     .animated-img {
         display: block;
     }
+
+    .landing::before {
+        height: 13vw; /* Limit the height to only affect the bottom */
+    }
+
 }
 
 @media (min-width: 1200px) {

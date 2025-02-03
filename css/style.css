@@ -39,7 +39,6 @@ body {
     line-height: 1.5;
     font-family: 'Cairo', sans-serif;
     -webkit-font-smoothing: antialiased;
-    background-color: #fffaf0; /* more warm white */
 }
 
 body {
@@ -94,7 +93,7 @@ a {
 /* Top of header */
 header {
     padding: 0.625rem 0;
-    z-index: 1;
+    z-index: 10;
     box-shadow: 0 0 10px rgb(0, 0, 0, .2);
 }
 
@@ -124,7 +123,20 @@ nav .links {
 
 /* Top of main */
 .landing {
+    position: relative;
     background-color: var(--section-background);
+    overflow: hidden; /* Ensures no scrollbar appears */
+}
+
+.landing::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20vw; /* Limit the height to only affect the bottom */
+    bottom: 0;
+    background-color: white;
+    transform: skewY(-6deg);
+    transform-origin: bottom right; /* Skew only at the bottom */
 }
 
 .landing, .welcome-wrapper {
@@ -135,20 +147,22 @@ nav .links {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    padding: 0 1rem;
+    padding-bottom: 7.5rem;
 }
 
 .welcome-inner {
-    flex: 1;
+    text-align: center;
 }
 
 .welcome-inner h1 {
     text-transform: capitalize;
-    font-size: var(--step-2);
+    font-size: var(--step-3);
 }
 
 .welcome-inner p {
-    font-size: var(--step-0);
+    font-size: var(--step-1);
+    opacity: 60%;
 }
 
 .welcome-inner p::first-letter {
@@ -159,7 +173,6 @@ nav .links {
     display: none;
     width: 100%;
     max-width: 600px;
-    flex: 1;
     animation: move 5s infinite linear;
 }
 
