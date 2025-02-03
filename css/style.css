@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+:root {
+    /* Font size */
+    /* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1440,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+    --step--2: clamp(0.6076rem, 0.5527rem + 0.2748vw, 0.8rem);
+    --step--1: clamp(0.7292rem, 0.6518rem + 0.3869vw, 1rem);
+    --step-0: clamp(0.875rem, 0.7679rem + 0.5357vw, 1.25rem);
+    --step-1: clamp(1.05rem, 0.9036rem + 0.7321vw, 1.5625rem);
+    --step-2: clamp(1.26rem, 1.062rem + 0.9902vw, 1.9531rem);
+    --step-3: clamp(1.512rem, 1.2465rem + 1.3277vw, 2.4414rem);
+    --step-4: clamp(1.8144rem, 1.4609rem + 1.7677vw, 3.0518rem);
+    --step-5: clamp(2.1773rem, 1.7094rem + 2.3392vw, 3.8147rem);
+
+    /* Colors */
+    --main-color: #2196f3;
+    --main-color-alt: #1787e0;
+    --section-background: #ececec;
+    
+    /* Transitions */
+    --main-transition: 0.3s;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    font-family: 'Cairo', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #fffaf0; /* more warm white */
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 1fr auto;
+}
+
+header, main, footer {
+    grid-column: 1 / -1;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Custom */
+
+/* Top of header */
+header {
+    padding: 0.625rem 0;
+    background-color: slateblue;
+}
+
+.nav-logo-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-transform: capitalize;
+}
+
+.logo {
+    /* font-size: 1.625rem; */
+    font-size: var(--step-2);
+    font-weight: 700;
+    color:var(--main-color) ;
+}
+
+nav .links {
+    display: flex;
+    font-size: var(--step-0);
+    gap: 0 1.25rem;
+}
+/* Bottom of header */
+
+/* Top of main */
+.landing, .welcome-wrapper {
+    height: 100%;
+}
+
+.welcome-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid red;
+    background-color: skyblue;
+}
+
+.welcome-inner h1 {
+    text-transform: capitalize;
+    font-size: var(--step-2);
+}
+
+.welcome-inner p {
+    font-size: var(--step-0);
+}
+
+.welcome-inner p::first-letter {
+    text-transform: capitalize;
+}
+/* Bottom of main */
