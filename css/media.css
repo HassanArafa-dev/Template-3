@@ -41,6 +41,10 @@
         height: 13vw; /* Limit the height to only affect the bottom */
     }
 
+    .welcome-wrapper {
+        padding-bottom: 13vw;
+    }
+
 }
 
 @media (min-width: 1200px) {
