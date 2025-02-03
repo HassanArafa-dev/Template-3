@@ -8,6 +8,10 @@
         max-width: 750px;
     }
 
+    header {
+        padding: 1.25rem 0;
+    }
+
     .nav-logo-wrapper {
         flex-flow: row nowrap;
         justify-content: space-around;
@@ -21,6 +25,10 @@
 @media (min-width: 992px) {
     .container {
         max-width: 970px;
+    }
+
+    .animated-img {
+        display: block;
     }
 }
 

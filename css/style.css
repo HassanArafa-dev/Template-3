@@ -94,7 +94,8 @@ a {
 /* Top of header */
 header {
     padding: 0.625rem 0;
-    background-color: slateblue;
+    z-index: 1;
+    box-shadow: 0 0 10px rgb(0, 0, 0, .2);
 }
 
 .nav-logo-wrapper {
@@ -103,6 +104,7 @@ header {
     align-items: center;
     justify-content: center;
     height: 100%;
+    gap: 0.625rem;
     text-transform: capitalize;
 }
 
@@ -121,6 +123,10 @@ nav .links {
 /* Bottom of header */
 
 /* Top of main */
+.landing {
+    background-color: var(--section-background);
+}
+
 .landing, .welcome-wrapper {
     height: 100%;
 }
@@ -130,8 +136,10 @@ nav .links {
     align-items: center;
     justify-content: center;
     text-align: center;
-    border: 1px solid red;
-    background-color: skyblue;
+}
+
+.welcome-inner {
+    flex: 1;
 }
 
 .welcome-inner h1 {
@@ -145,5 +153,22 @@ nav .links {
 
 .welcome-inner p::first-letter {
     text-transform: capitalize;
+}
+
+.animated-img {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    flex: 1;
+    animation: move 5s infinite linear;
+}
+
+@keyframes move {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
 }
 /* Bottom of main */
