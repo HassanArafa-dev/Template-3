@@ -244,3 +244,37 @@ main {
     }
 }
 /* Bottom of main */
+
+/* Articles */
+.articles .section-title {
+    position: relative;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 1.25rem;
+    margin-bottom: 5rem;
+    font-size: var(--step-4);
+    text-transform: uppercase;
+    border: 2px solid black;
+}
+
+.articles .section-title::before,
+.articles .section-title::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: calc(50% - 10px / 2); /* center vertically */
+    background-color: var(--main-color);
+}
+
+.articles .section-title::before {
+    left: calc(100% + 15px);
+}
+
+.articles .section-title::after {
+    right: calc(100% + 15px);
+}
+
+/* the idea is to make the two bullet move into the box using animation then make them fill the box at 100% and ofc when box is hovered text turns into white */
