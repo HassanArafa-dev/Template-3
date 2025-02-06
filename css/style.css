@@ -93,7 +93,7 @@ a {
 /* Top of header */
 header {
     padding: 0.625rem 0;
-    z-index: 10;
+    z-index: 1;
     box-shadow: 0 0 10px rgb(0, 0, 0, .2);
 }
 
@@ -109,7 +109,7 @@ header {
 
 .logo {
     /* font-size: 1.625rem; */
-    font-size: var(--step-2);
+    font-size: var(--step-3);
     font-weight: 700;
     color:var(--main-color) ;
 }
@@ -122,6 +122,9 @@ nav .links {
 /* Bottom of header */
 
 /* Top of main */
+main {
+    position: relative;
+}
 .landing {
     position: relative;
     background-color: var(--section-background);
@@ -129,8 +132,8 @@ nav .links {
 }
 
 .landing::before {
-    content: "";
     position: absolute;
+    content: "";
     width: 100%;
     height: 20vw; /* Limit the height to only affect the bottom */
     bottom: 0;
@@ -139,6 +142,38 @@ nav .links {
     transform-origin: bottom right; /* Skew only at the bottom */
 }
 
+.bouncing-arrows {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    left: 50%;
+    bottom: 6vh;
+    transform: translateX(-50%);
+    animation: bounceArrow 1.5s;
+    animation-iteration-count: infinite;
+}
+
+.bouncing-arrows span {
+    display: block;
+    width: 17px;
+    height: 17px;
+    transform: rotate(45deg);
+    border: 5px solid var(--main-color);
+    border-radius: 4px;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    margin: -5px 0;
+}
+
+@keyframes bounceArrow {
+    0%, 10%, 20%, 50%, 80%, 100% {
+        translate: 0;
+    }
+
+    40%, 60% {
+        translate: 0 -15px;
+    }
+}
 .landing, .welcome-wrapper {
     height: 100%;
 }
