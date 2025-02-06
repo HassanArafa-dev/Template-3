@@ -94,7 +94,7 @@ a {
 header {
     padding: 0.625rem 0;
     z-index: 1;
-    box-shadow: 0 0 10px rgb(0, 0, 0, .2);
+    box-shadow: 0 0 10px #090979;
 }
 
 .nav-logo-wrapper {
@@ -116,7 +116,29 @@ header {
 nav .links {
     display: flex;
     font-size: var(--step-0);
-    gap: 0 1.25rem;
+    gap: 0 .5rem;
+}
+
+.links li a {
+    position: relative;
+    padding: 0 10px;
+}
+
+.links li a::before {
+    position: absolute;
+    content: "";
+    width: calc(100%);
+    inset: 0;
+    margin: 0 auto;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--main-transition) ease;
+    background-color: var(--main-color);
+}
+
+.links li a:hover::before {
+    transform: scaleX(1);
 }
 /* Bottom of header */
 
@@ -128,11 +150,8 @@ main {
     position: relative;
     background-color: var(--section-background);
     overflow: hidden; /* Ensures no scrollbar appears */
-    /* background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); */
-
     background: rgb(63,94,251);
-background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
 }
 
 .landing::before {
