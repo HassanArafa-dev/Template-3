@@ -19,7 +19,7 @@
     
     /* Transitions */
     --main-transition: 0.3s;
-    --sec-transition: .8s;
+    --sec-transition: .5s;
 }
 
 /* Reset */
@@ -251,7 +251,7 @@ main {
 }
 /* Bottom of main */
 
-/* Articles */
+/* Top of Articles */
 .articles .section-title {
     position: relative;
     text-align: center;
@@ -274,8 +274,8 @@ main {
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--main-color);
     transition: all var(--sec-transition);
+    background-color: var(--main-color);
     z-index: -1;
 }
 
@@ -298,7 +298,7 @@ main {
 .articles .section-title:hover {
     color: white;
     border-color: white;
-    transition: all var(--sec-transition) .5s;
+    transition: all var(--sec-transition) .2s;
     transform: scale(0.9);
 }
 
@@ -311,6 +311,15 @@ main {
     transform: translateY(0);
 }
 
+.articles-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
 
+.articles-inner .card {
+    
+}
 
+/* Bottom of Articles */
 /* the idea is to make the two bullet move into the box using animation then make them fill the box at 100% and ofc when box is hovered text turns into white */
