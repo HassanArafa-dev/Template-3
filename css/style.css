@@ -19,6 +19,7 @@
     
     /* Transitions */
     --main-transition: 0.3s;
+    --sec-transition: .8s;
 }
 
 /* Reset */
@@ -121,7 +122,8 @@ nav .links {
 
 .links li a {
     position: relative;
-    padding: 0 10px;
+    /* padding: 0 10px; */
+    padding: 0.6rem;
 }
 
 .links li a::before {
@@ -135,6 +137,10 @@ nav .links {
     transform-origin: left;
     transition: transform var(--main-transition) ease;
     background-color: var(--main-color);
+}
+
+.links li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .links li a:hover::before {
@@ -256,25 +262,55 @@ main {
     font-size: var(--step-4);
     text-transform: uppercase;
     border: 2px solid black;
+    z-index: 1;
 }
 
 .articles .section-title::before,
 .articles .section-title::after {
     position: absolute;
     content: "";
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    top: calc(50% - 10px / 2); /* center vertically */
+    top: 50%;
+    transform: translateY(-50%);
     background-color: var(--main-color);
+    transition: all var(--sec-transition);
+    z-index: -1;
 }
 
 .articles .section-title::before {
-    left: calc(100% + 15px);
+    left: -30px;
 }
 
 .articles .section-title::after {
-    right: calc(100% + 15px);
+    right: -30px;
 }
+
+.articles .section-title:hover::before {
+    left: 0;
+}
+
+.articles .section-title:hover::after {
+    right: 0;
+}
+
+.articles .section-title:hover {
+    color: white;
+    border-color: white;
+    transition: all var(--sec-transition) .5s;
+    transform: scale(0.9);
+}
+
+.articles .section-title:hover::before,
+.articles .section-title:hover::after {
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    transform: translateY(0);
+}
+
+
 
 /* the idea is to make the two bullet move into the box using animation then make them fill the box at 100% and ofc when box is hovered text turns into white */
