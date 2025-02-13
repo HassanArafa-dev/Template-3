@@ -39,6 +39,7 @@ html {
 
 body {
     min-height: 100vh;
+    min-height: 100svh;
     line-height: 1.5;
     font-family: 'Cairo', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -157,6 +158,7 @@ main {
 .landing {
     position: relative;
     height: calc(100vh - 73px);
+    height: calc(100svh - 73px);
     z-index: 1;
     overflow: hidden;
 }
