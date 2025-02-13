@@ -18,8 +18,10 @@
     --section-background: #ececec;
     
     /* Transitions */
-    --main-transition: 0.3s;
-    --sec-transition: .5s;
+    --main-transition: .7s;
+
+    /* Main Padding */
+    --main-padding: 1rem;
 }
 
 /* Reset */
@@ -55,10 +57,11 @@ header, main, footer {
 img,
 picture,
 video,
+iframe,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
+    max-inline-size: 100%;
+    block-size: auto;
 }
 
 input,
@@ -122,14 +125,13 @@ nav .links {
 
 .links li a {
     position: relative;
-    /* padding: 0 10px; */
     padding: 0.6rem;
 }
 
 .links li a::before {
     position: absolute;
     content: "";
-    width: calc(100%);
+    inline-size: 100%;
     inset: 0;
     margin: 0 auto;
     height: 3px;
@@ -154,21 +156,22 @@ main {
 }
 .landing {
     position: relative;
-    background-color: var(--section-background);
-    overflow: hidden; /* Ensures no scrollbar appears */
-    background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    height: calc(100vh - 73px);
+    z-index: 1;
+    overflow: hidden;
 }
 
 .landing::before {
     position: absolute;
     content: "";
     width: 100%;
-    height: 20vw; /* Limit the height to only affect the bottom */
-    bottom: 0;
-    background-color: white;
+    height: 100%;
+    top: -40px;
+    z-index: -1;
     transform: skewY(-6deg);
-    transform-origin: bottom right; /* Skew only at the bottom */
+    transform-origin: top left;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)
 }
 
 .bouncing-arrows {
@@ -203,7 +206,7 @@ main {
         translate: 0 -15px;
     }
 }
-.landing, .welcome-wrapper {
+.welcome-wrapper {
     height: 100%;
 }
 
@@ -212,7 +215,7 @@ main {
     align-items: center;
     justify-content: center;
     padding: 0 1rem;
-    padding-bottom: 20vw;
+    padding-block-end: 100px;
 }
 
 .welcome-inner {
@@ -246,7 +249,7 @@ main {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-50px);
+        transform: translateY(-50px);  
     }
 }
 /* Bottom of main */
@@ -262,64 +265,97 @@ main {
     font-size: var(--step-4);
     text-transform: uppercase;
     border: 2px solid black;
-    z-index: 1;
 }
 
+/* Style for both bullets */
 .articles .section-title::before,
 .articles .section-title::after {
     position: absolute;
     content: "";
     width: 12px;
     height: 12px;
-    border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
-    transition: all var(--sec-transition);
-    background-color: var(--main-color);
+    border-radius: 50%;
     z-index: -1;
+    background-color: var(--main-color);
 }
 
-.articles .section-title::before {
+/* position */
+.articles .section-title:before {
     left: -30px;
 }
 
-.articles .section-title::after {
+.articles .section-title:after {
     right: -30px;
 }
 
+/* hover */
 .articles .section-title:hover::before {
-    left: 0;
+    animation: left-move var(--main-transition) linear forwards;
 }
 
 .articles .section-title:hover::after {
-    right: 0;
+    animation: right-move var(--main-transition) linear forwards;
 }
 
 .articles .section-title:hover {
     color: white;
     border-color: white;
-    transition: all var(--sec-transition) .2s;
-    transform: scale(0.9);
+    transform: scale(.9);
+    transition: .3s .7s;
 }
 
-.articles .section-title:hover::before,
-.articles .section-title:hover::after {
-    border-radius: 0;
-    width: 50%;
-    height: 100%;
-    top: 0;
-    transform: translateY(0);
+/* Animation */
+@keyframes left-move {
+    50% {
+        left: 10px;
+        width: 12px;
+        height: 12px;
+    }
+    
+    100% {
+        left: 0;
+        width: 50%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+@keyframes right-move {
+    50% {
+        right: 10px;
+        width: 12px;
+        height: 12px;
+    }
+    
+    100% {
+        right: 0;
+        width: 50%;
+        height: 100%;
+        border-radius: 0;
+    }
 }
 
 .articles-inner {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    padding: 0 var(--main-padding); 
 }
 
 .articles-inner .card {
-    
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
 }
 
-/* Bottom of Articles */
-/* the idea is to make the two bullet move into the box using animation then make them fill the box at 100% and ofc when box is hovered text turns into white */
+.articles-inner .card .content {
+    padding: 1rem;
+    border-bottom: 1px solid black;
+}
+
+.articles-inner .card .button {
+    padding: var(--main-padding);
+}

@@ -4,6 +4,7 @@
 }
 
 @media (min-width: 768px) {
+    
     .container {
         max-width: 750px;
     }
@@ -20,8 +21,6 @@
     nav .links {
         gap: 0 3.75rem;
     }
-
-    
 }
 
 @media (min-width: 992px) {
@@ -37,14 +36,7 @@
         display: block;
     }
 
-    .landing::before {
-        height: 13vw; /* Limit the height to only affect the bottom */
-    }
-
-    .welcome-wrapper {
-        padding-bottom: 13vw;
-    }
-
+    
 }
 
 @media (min-width: 1200px) {
