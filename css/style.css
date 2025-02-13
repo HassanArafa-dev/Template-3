@@ -181,8 +181,7 @@ main {
     width: fit-content;
     height: fit-content;
     left: 50%;
-    /* bottom: 6vh; */
-    bottom: 100px;
+    bottom: 6vh;
     transform: translateX(-50%);
     animation: bounceArrow 1.5s;
     animation-iteration-count: infinite;
