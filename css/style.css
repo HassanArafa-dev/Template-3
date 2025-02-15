@@ -48,7 +48,6 @@ body {
 body {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto 1fr auto;
 }
 
 header, main, footer {
@@ -107,7 +106,6 @@ header {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    height: 100%;
     gap: 0.625rem;
     text-transform: capitalize;
 }
@@ -156,9 +154,11 @@ main {
     position: relative;
 }
 .landing {
+    display: flex;
+    flex-flow: column;
     position: relative;
-    height: calc(100vh - 73px);
-    height: calc(100svh - 73px);
+    min-height: calc(100vh - 73px);
+    min-height: calc(100svh - 73px);
     z-index: 1;
     overflow: hidden;
 }
@@ -168,7 +168,8 @@ main {
     content: "";
     width: 100%;
     height: 100%;
-    top: -40px;
+    /* top: -40px; */
+    top: -7vh;
     z-index: -1;
     transform: skewY(-6deg);
     transform-origin: top left;
@@ -181,7 +182,7 @@ main {
     width: fit-content;
     height: fit-content;
     left: 50%;
-    bottom: 6vh;
+    bottom: 6.5vh;
     transform: translateX(-50%);
     animation: bounceArrow 1.5s;
     animation-iteration-count: infinite;
@@ -208,14 +209,12 @@ main {
         translate: 0 -15px;
     }
 }
-.welcome-wrapper {
-    height: 100%;
-}
 
 .welcome-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1;
     padding: 0 1rem;
     padding-block-end: 100px;
 }
