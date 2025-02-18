@@ -1,0 +1,131 @@
+/* center using margin */
+.u-center-hor {
+    margin-inline: auto;
+}
+
+.u-center-ver {
+    margin-block: auto;
+}
+
+.u-block {
+    display: block;
+}
+
+.u-opacity-50 {
+    opacity: 50%;
+}
+
+.u-opacity-70 {
+    opacity: 70%;
+}
+
+.u-capital {
+    text-transform: capitalize;
+}
+
+.u-capital-fl::first-letter {
+    text-transform: capitalize;
+}
+
+.u-uppercase {
+    text-transform: uppercase ;
+}
+
+.u-lowercase {
+    text-transform: lowercase;
+}
+
+.u-flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.u-flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.u-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.u-align-start {
+    align-items: flex-start;
+}
+
+.u-align-center {
+    align-items: center;
+}
+
+.u-align-end {
+    align-items: flex-end;
+}
+
+.u-align-stretch {
+    align-items: stretch;
+}
+
+.u-align-baseline {
+    align-items: baseline;
+}
+
+.u-justify-start {
+    justify-content: flex-start;
+}
+
+.u-justify-center {
+    justify-content: center;
+}
+
+.u-justify-end {
+    justify-content: flex-end;
+}
+
+.u-justify-between {
+    justify-content: space-between;
+}
+
+.u-justify-around {
+    justify-content: space-around;
+}
+
+.u-justify-evenly {
+    justify-content: space-evenly;
+}
+
+.u-grow {
+    flex-grow: 1;
+}
+
+.u-shrink {
+    flex-shrink: 1;
+}
+
+.u-no-grow {
+    flex-grow: 0;
+}
+
+.u-no-shrink {
+    flex-shrink: 0;
+}
+
+.u-basis-auto {
+    flex-basis: auto;
+}
+
+.u-basis-full {
+    flex-basis: 100%;
+}
+
+.u-relative {
+    position: relative;
+}
+
+.u-absolute {
+    position: absolute;
+    content: "";
+}

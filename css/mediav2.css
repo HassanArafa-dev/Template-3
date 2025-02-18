@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    margin: 0 auto;
+    margin-inline: auto;
 }
 
 @media (min-width: 768px) {
@@ -14,7 +14,7 @@
         flex: 0 0 auto;
     }
 
-    .header__menu-item-link {
+    .header__menu-link {
         align-items: center;
         height: 72px;
         padding: 0 30px;

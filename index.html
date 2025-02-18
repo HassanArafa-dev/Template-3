@@ -3,175 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/media.css">
-    <title>Zero's Template 3</title>
+    <link rel="stylesheet" href="css/stylev2.css">
+    <link rel="stylesheet" href="css/mediav2.css">
+    <link rel="stylesheet" href="css/utility.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <title>Elzero's Template 3 (v2)</title>
+    <!-- better class naming and overall structure // BEM used // mobile first as almost always -->
 </head>
 <body>
-    <!-- Mobile first as almost always -->
-    <!-- Top Header -->
-    <header>
-        <div class="nav-logo-wrapper container">
-            <div class="logo">elzero</div>
-            <nav>
-                <ul class="links">
-                    <li><a href="#articles">articles</a></li>
-                    <li><a href="#gallery">gallery</a></li>
-                    <li><a href="#features">features</a></li>
-                    <li><a href="#">other links</a></li>
-                    
+    <header class="header">
+        <div class="header__wrapper container">
+            <div class="header__logo">elzero</div>
+            <nav class="header__nav">
+                <ul class="header__menu">
+                    <li class="header__menu-item"><a href="#articles" class="header__menu-link header__menu-link--border-top-hover">articles</a></li>
+                    <li class="header__menu-item"><a href="#gallery" class="header__menu-link header__menu-link--border-top-hover">gallery</a></li>
+                    <li class="header__menu-item"><a href="#features" class="header__menu-link header__menu-link--border-top-hover">features</a></li>
+                    <li class="header__menu-item"><a href="#other-links" class="header__menu-link header__menu-link--border-top-hover">other links</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <!-- Bottom Header -->
     <main>
-        <!-- Welcome // landing section -->
-        <section class="landing-wrapper">
-            <article class="welcome-wrapper container">
-                <div class="welcome-inner">
-                    <h1>welcome, to elzero world</h1>
-                    <p>here i'm gonna share everything about my life.</p>
-                    <p>books i'm reading, games i'm playing, stories and events.</p>
+        <!-- Landing -->
+        <section class="landing">
+            <article class="landing__wrapper container">
+                <div class="landing__intro">
+                    <h1 class="landing__intro-welcome u-fs-step-3">welcome, to elzero world</h1>
+                    <p class="landing__intro-info u-fs-step-1 u-opacity-70">here i'm gonna share everything about my life.</p>
+                    <p class="landing__intro-info u-fs-step-1 u-opacity-70">books i'm reading, games i'm playing, stories and events</p>
                 </div>
-                <div class="animated-img">
-                    <img src="imgs/landing-image.png" alt="animated-image" width="1200" height="757">
-                </div>
+                <img src="imgs/landing-image.png" alt="landing-img" width="1200" height="757" class="landing__wrapper-img">
             </article>
-            <div class="bouncing-arrows">
-                <span></span>
-                <span></span>
+            <div class="landing__arrows">
+                <span class="landing__arrows-triangle"></span><span class="landing__arrows-triangle"></span>
             </div>
         </section>
         <!-- Articles -->
-        <section class="articles-wrapper">
-            <h2 class="section-title">articles</h2>
-            <article class="articles-inner container">
-                <!--  -->
-                <div class="card">
-                    <img src="imgs/cat-01.jpg" alt="" width="600" height="384">
-                    <div class="content">
-                        <div class="info">
-                            <h3 class="title">test title</h3>
-                        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sit.</p>
-                        </div>
-                        <div class="button">
-                            <h4 class="title"><a href="#">read more</a></h4>
-                            <div class="arrow">
-                            </div>
-                        </div>
+        <section class="articles">
+            <h1 class="articles__title section__title--style section__title--bullets section__title--hover u-center-hor u-fs-step-3">articles</h1>
+            <article class="articles__wrapper container">
+                <div class="articles__card articles__card--style articles__card--hover">
+                    <img src="imgs/cat-01.jpg" alt="cat-01" width="600" height="384" loading="lazy" class="articles__card-img">
+                    <div class="articles__content ">
+                        <h2 class="articles__content-title u-capital">test title</h2>
+                        <p class="articles__content-info u-capital-fl u-opacity-70">lorem ipsum, dolor sit amet consectetur adipisicing elit. quisquam, explicabo.</p>
                     </div>
-                    
-                </div>
-                <div class="card">
-                    <img src="imgs/cat-02.jpg" alt="" width="600" height="384">
-                    <div class="content">
-                        <div class="info">
-                            <h3 class="title">test title</h3>
-                        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sit.</p>
-                        </div>
-                        <div class="button">
-                            <h4 class="title"><a href="#">read more</a></h4>
-                            <div class="arrow">
-                            </div>
-                        </div>
+                    <div class="articles__cta articles__cta--style u-flex-row u-justify-between  u-capital">
+                        <a href="#" class="articles__cta-btn">read more</a>
+                        <span class="articles__cta-arrow articles__cta-arrow--style articles__card--hover u-flex-row u-justify-end u-align-center u-relative u-block u-center-ver"></span>
                     </div>
-                    
                 </div>
-                <div class="card">
-                    <img src="imgs/cat-03.jpg" alt="" width="600" height="384">
-                    <div class="content">
-                        <div class="info">
-                            <h3 class="title">test title</h3>
-                        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sit.</p>
-                        </div>
-                        <div class="button">
-                            <h4 class="title"><a href="#">read more</a></h4>
-                            <div class="arrow">
-                            </div>
-                        </div>
+                <div class="articles__card articles__card--style articles__card--hover">
+                    <img src="imgs/cat-02.jpg" alt="cat-02" width="600" height="384" loading="lazy" class="articles__card-img">
+                    <div class="articles__content ">
+                        <h2 class="articles__content-title u-capital">test title</h2>
+                        <p class="articles__content-info u-capital-fl u-opacity-70">lorem ipsum, dolor sit amet consectetur adipisicing elit. quisquam, explicabo.</p>
                     </div>
-                    
-                </div>
-                <div class="card">
-                    <img src="imgs/cat-04.jpg" alt="" width="600" height="384">
-                    <div class="content">
-                        <div class="info">
-                            <h3 class="title">test title</h3>
-                        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sit.</p>
-                        </div>
-                        <div class="button">
-                            <h4 class="title"><a href="#">read more</a></h4>
-                            <div class="arrow">
-                            </div>
-                        </div>
+                    <div class="articles__cta articles__cta--style u-flex-row u-justify-between  u-capital">
+                        <a href="#" class="articles__cta-btn">read more</a>
+                        <span class="articles__cta-arrow articles__cta-arrow--style articles__card--hover u-flex-row u-justify-end u-align-center u-relative u-block u-center-ver"></span>
                     </div>
-                    
                 </div>
-                <div class="card">
-                    <img src="imgs/cat-05.jpg" alt="" width="600" height="384">
-                    <div class="content">
-                        <div class="info">
-                            <h3 class="title">test title</h3>
-                        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sit.</p>
-                        </div>
-                        <div class="button">
-                            <h4 class="title"><a href="#">read more</a></h4>
-                            <div class="arrow">
-                            </div>
-                        </div>
+                <div class="articles__card articles__card--style articles__card--hover">
+                    <img src="imgs/cat-03.jpg" alt="cat-03" width="600" height="384" loading="lazy" class="articles__card-img">
+                    <div class="articles__content ">
+                        <h2 class="articles__content-title u-capital">test title</h2>
+                        <p class="articles__content-info u-capital-fl u-opacity-70">lorem ipsum, dolor sit amet consectetur adipisicing elit. quisquam, explicabo.</p>
                     </div>
-                    
-                </div>
-                <div class="card">
-                    <img src="imgs/cat-06.jpg" alt="" width="600" height="384">
-                    <div class="content">
-                        <div class="info">
-                            <h3 class="title">test title</h3>
-                        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sit.</p>
-                        </div>
-                        <div class="button">
-                            <h4 class="title"><a href="#">read more</a></h4>
-                            <div class="arrow">
-                            </div>
-                        </div>
+                    <div class="articles__cta articles__cta--style u-flex-row u-justify-between  u-capital">
+                        <a href="#" class="articles__cta-btn">read more</a>
+                        <span class="articles__cta-arrow articles__cta-arrow--style articles__card--hover u-flex-row u-justify-end u-align-center u-relative u-block u-center-ver"></span>
                     </div>
-                    
                 </div>
-                <div class="card">
-                    <img src="imgs/cat-07.jpg" alt="" width="600" height="384">
-                    <div class="content">
-                        <div class="info">
-                            <h3 class="title">test title</h3>
-                        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sit.</p>
-                        </div>
-                        <div class="button">
-                            <h4 class="title"><a href="#">read more</a></h4>
-                            <div class="arrow">
-                            </div>
-                        </div>
+                <div class="articles__card articles__card--style articles__card--hover">
+                    <img src="imgs/cat-04.jpg" alt="cat-04" width="600" height="384" loading="lazy" class="articles__card-img">
+                    <div class="articles__content ">
+                        <h2 class="articles__content-title u-capital">test title</h2>
+                        <p class="articles__content-info u-capital-fl u-opacity-70">lorem ipsum, dolor sit amet consectetur adipisicing elit. quisquam, explicabo.</p>
                     </div>
-                    
-                </div>
-                <div class="card">
-                    <img src="imgs/cat-08.jpg" alt="" width="600" height="384">
-                    <div class="content">
-                        <div class="info">
-                            <h3 class="title">test title</h3>
-                        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sit.</p>
-                        </div>
-                        <div class="button">
-                            <h4 class="title"><a href="#">read more</a></h4>
-                            <div class="arrow">
-                            </div>
-                        </div>
+                    <div class="articles__cta articles__cta--style u-flex-row u-justify-between  u-capital">
+                        <a href="#" class="articles__cta-btn">read more</a>
+                        <span class="articles__cta-arrow articles__cta-arrow--style articles__card--hover u-flex-row u-justify-end u-align-center u-relative u-block u-center-ver"></span>
                     </div>
-                    
                 </div>
-                <!--  -->
+                <div class="articles__card articles__card--style articles__card--hover">
+                    <img src="imgs/cat-05.jpg" alt="cat-05" width="600" height="384" loading="lazy" class="articles__card-img">
+                    <div class="articles__content ">
+                        <h2 class="articles__content-title u-capital">test title</h2>
+                        <p class="articles__content-info u-capital-fl u-opacity-70">lorem ipsum, dolor sit amet consectetur adipisicing elit. quisquam, explicabo.</p>
+                    </div>
+                    <div class="articles__cta articles__cta--style u-flex-row u-justify-between  u-capital">
+                        <a href="#" class="articles__cta-btn">read more</a>
+                        <span class="articles__cta-arrow articles__cta-arrow--style articles__card--hover u-flex-row u-justify-end u-align-center u-relative u-block u-center-ver"></span>
+                    </div>
+                </div>
+                <div class="articles__card articles__card--style articles__card--hover">
+                    <img src="imgs/cat-06.jpg" alt="cat-06" width="600" height="384" loading="lazy" class="articles__card-img">
+                    <div class="articles__content ">
+                        <h2 class="articles__content-title u-capital">test title</h2>
+                        <p class="articles__content-info u-capital-fl u-opacity-70">lorem ipsum, dolor sit amet consectetur adipisicing elit. quisquam, explicabo.</p>
+                    </div>
+                    <div class="articles__cta articles__cta--style u-flex-row u-justify-between  u-capital">
+                        <a href="#" class="articles__cta-btn">read more</a>
+                        <span class="articles__cta-arrow articles__cta-arrow--style articles__card--hover u-flex-row u-justify-end u-align-center u-relative u-block u-center-ver"></span>
+                    </div>
+                </div>
+                <div class="articles__card articles__card--style articles__card--hover">
+                    <img src="imgs/cat-07.jpg" alt="cat-07" width="600" height="384" loading="lazy" class="articles__card-img">
+                    <div class="articles__content ">
+                        <h2 class="articles__content-title u-capital">test title</h2>
+                        <p class="articles__content-info u-capital-fl u-opacity-70">lorem ipsum, dolor sit amet consectetur adipisicing elit. quisquam, explicabo.</p>
+                    </div>
+                    <div class="articles__cta articles__cta--style u-flex-row u-justify-between  u-capital">
+                        <a href="#" class="articles__cta-btn">read more</a>
+                        <span class="articles__cta-arrow articles__cta-arrow--style articles__card--hover u-flex-row u-justify-end u-align-center u-relative u-block u-center-ver"></span>
+                    </div>
+                </div>
+                <div class="articles__card articles__card--style articles__card--hover">
+                    <img src="imgs/cat-08.jpg" alt="cat-08" width="600" height="384" loading="lazy" class="articles__card-img">
+                    <div class="articles__content ">
+                        <h2 class="articles__content-title u-capital">test title</h2>
+                        <p class="articles__content-info u-capital-fl u-opacity-70">lorem ipsum, dolor sit amet consectetur adipisicing elit. quisquam, explicabo.</p>
+                    </div>
+                    <div class="articles__cta articles__cta--style u-flex-row u-justify-between  u-capital">
+                        <a href="#" class="articles__cta-btn">read more</a>
+                        <span class="articles__cta-arrow articles__cta-arrow--style articles__card--hover u-flex-row u-justify-end u-align-center u-relative u-block u-center-ver"></span>
+                    </div>
+                </div>
             </article>
         </section>
-        
+        <!-- Gallery -->
+        <section class="gallery"></section>
     </main>
     <footer></footer>
 </body>
