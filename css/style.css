@@ -157,7 +157,7 @@ main {
     gap: 6rem 0;
     position: relative;
 }
-.landing {
+.landing-wrapper {
     display: flex;
     flex-flow: column;
     position: relative;
@@ -167,7 +167,7 @@ main {
     overflow: hidden;
 }
 
-.landing::before {
+.landing-wrapper::before {
     position: absolute;
     content: "";
     width: 100%;
