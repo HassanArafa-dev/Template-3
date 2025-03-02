@@ -444,6 +444,7 @@ main {
     background-size: cover; /* Ensures the image fills the div */
     background-color: rgba(244, 64, 54, 0.6);
     background-blend-mode: overlay;
+    isolation: isolate;
     position: relative;
     overflow: hidden;
 }
@@ -552,8 +553,6 @@ main {
     color: white;
 }
 
-
-
 .features__card:nth-child(2) .features__card__content__btn:before {
     position: absolute;
     content: "";
@@ -571,9 +570,6 @@ main {
     transform: scaleX(1);
 }
 
-
-
-
 .features__card:nth-child(3) .features__card__content__btn:before {
     position: absolute;
     content: "";
@@ -590,9 +586,6 @@ main {
 .features__card:hover:nth-child(3) .features__card__content__btn:before {
     transform: scaleX(1);
 }
-
 /* Bottom of main */
 
-
-
-/* learn gradient (elzero) and clip-path  */
+/* - test features section on mobile and figure out why is it laggy when scrolling and fix the issue!! // maybe the blend thing check it out // issue doesn't exist on chrome it does only on firefox check what's the cause tho maybe blend */

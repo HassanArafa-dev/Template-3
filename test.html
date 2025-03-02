@@ -1,24 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:900" rel="stylesheet">
+  <style>
+    body {
+      background: #eee url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/pattern.png);
+    }
+    .container {
+      margin: 50px auto;
+      width: 300px;
+      position: relative;
+      isolation: isolate; /* Comment this out to test without isolation */
+      background: rgba(255, 255, 0, 0.5); /* Semi-transparent yellow */
+    }
+    .container img {
+      max-width: 100%;
+      mix-blend-mode: multiply;
+    }
+    .container h1 {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: red;
+      mix-blend-mode: overlay;
+    }
+  </style>
 </head>
 <body>
-
-    <style>
-.pattern {
-  width: 150px;
-  height: 150px;
-  background-image: linear-gradient(135deg, white 25%, transparent 25%),
-                    linear-gradient(225deg, white 25%, transparent 25%);
-  background-size: 30px 30px;
-  background-color: #f0f0f0;
-
-}
-
-    </style>
-    <div class="pattern"></div>
+  <div class="container">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=300" alt="Test Image">
+    <h1>Blend Test</h1>
+  </div>
 </body>
 </html>
