@@ -484,7 +484,7 @@ main {
     content: "";
     width: 100%;
     height: 30%;
-    bottom: -1px;
+    bottom: -2px;
     transform: skew(-75deg, 0);
     transform-origin: bottom right;
     transition: transform var(--main-transition);
