@@ -25,10 +25,17 @@
 
     /* Padding */
     --main-padding: 1rem;
+    --section-padding: 6.25rem 1rem;
+
+    /* Margin */
+    --section-title-margin-bottom: 5rem;
 
     /* landing white cut */
     --landing-white-cut: 6vh;
 
     /* Main column spacing */
-    --main-col-spacing: 8rem;
+    --main-gap: 8rem;
+
+    /* Main section spacing */
+    --main-wrapper-gap: 2.5rem;
 }

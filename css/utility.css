@@ -1,3 +1,37 @@
+/* Cairo */
+/* Font sizes */
+.u-fs-step--2 {
+    font-size: var(--step--2);
+}
+
+.u-fs-step--1 {
+    font-size: var(--step--1);
+}
+
+.u-fs-step-0 {
+    font-size: var(--step-0);
+}
+
+.u-fs-step-1 {
+    font-size: var(--step-1);
+}
+
+.u-fs-step-2 {
+    font-size: var(--step-2);
+}
+
+.u-fs-step-3 {
+    font-size: var(--step-3);
+}
+
+.u-fs-step-4 {
+    font-size: var(--step-4);
+}
+
+.u-fs-step-5 {
+    font-size: var(--step-5);
+}
+
 /* center using margin */
 .u-center-hor {
     margin-inline: auto;
@@ -128,4 +162,8 @@
 .u-absolute {
     position: absolute;
     content: "";
+}
+
+.u-shadow {
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
