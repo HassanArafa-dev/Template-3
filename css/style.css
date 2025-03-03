@@ -441,7 +441,7 @@ main {
     background-color: rgba(244, 64, 54, 0.6);
     background-blend-mode: overlay;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .features__card:nth-child(2) .features__card__image {
@@ -480,7 +480,7 @@ main {
     content: "";
     width: 100%;
     height: 120px;
-    bottom: 0;
+    bottom: -1px;
     transform: skew(-75deg, 0);
     transform-origin: bottom right;
     transition: transform var(--main-transition);
