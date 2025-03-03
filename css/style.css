@@ -432,10 +432,6 @@ main {
     border: 1px solid rgb(0, 0, 0, .1);
 }
 
-.features__card:hover .features__card__image::before {
-    /* transform: skew(75deg, 0); */
-} 
-
 .features__card__image {
     width: 100%;
     height: 100%;
@@ -483,13 +479,17 @@ main {
     position: absolute;
     content: "";
     width: 100%;
-    height: 30%;
-    bottom: -3px;
+    height: 120px;
+    bottom: 0;
     transform: skew(-75deg, 0);
     transform-origin: bottom right;
     transition: transform var(--main-transition);
     background-color: white;
 }
+
+.features__card:hover .features__card__image::before {
+    transform: skew(75deg, 0);
+} 
 
 .features__card__content {
     text-align: center;
@@ -537,7 +537,7 @@ main {
     inset: 0;
     width: 100%;
     height: 100%;
-    /* transform: scaleX(0); */
+    transform: scaleX(0);
     z-index: -1;
     transform-origin: left center;
     background-color: #f44036;
@@ -545,23 +545,19 @@ main {
 }
 
 .features__card:hover .features__card__content__btn:before {
-    /* transform: scaleX(1); */
+    transform: scaleX(1);
 }
 
 .features__card:hover .features__card__content__btn  {
-    /* color: white; */
+    color: white;
 }
 
 .features__card:nth-child(2) .features__card__content__btn:before {
     background-color: #009688;
 }
 
-
 .features__card:nth-child(3) .features__card__content__btn:before {
     
     background-color: #03a9f4;
 }
-
 /* Bottom of main */
-
-/* - test features section on mobile and figure out why is it laggy when scrolling and fix the issue!! // maybe the blend thing check it out // issue doesn't exist on chrome it does only on firefox check what's the cause tho maybe blend */
