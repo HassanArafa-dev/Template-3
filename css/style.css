@@ -484,13 +484,45 @@ main {
     bottom: -1px;
     transform: skew(-75deg, 0);
     transform-origin: bottom right;
-    transition: transform var(--main-transition);
     background-color: white;
 }
 
+/* Used animation instead of normal hover because when the skew height is 120px (looks better when the hover works) on some vw's the skew part looks broken so i had to make it 170px so it works fine across all vw but when the hover happens it looks ugly, so i made the animation part where when u hover skew part becomes 120px and when it's not hovered it's 170px at 100% */
+.features__card:not(:hover) .features__card__image::before {
+    animation: skew-not var(--main-transition) ease-in-out forwards;
+}
+
 .features__card:hover .features__card__image::before {
-    transform: skew(75deg, 0);
-} 
+    animation: skew-left var(--main-transition) ease-in-out forwards;
+}
+
+@keyframes skew-left {
+    0% {
+        transform: skew(-75deg, 0);
+        height: 120px;
+    }
+    100% {
+        transform: skew(75deg, 0);
+        height: 120px;
+    }
+    
+}
+
+@keyframes skew-not {
+    0% {
+        transform: skew(75deg, 0);
+        height: 120px;
+    }
+
+    99.9% {
+        transform: skew(-75deg, 0);
+        height: 120px;
+    }
+
+    100% {
+        height: 170px;
+    }
+}
 
 .features__card__content {
     text-align: center;
