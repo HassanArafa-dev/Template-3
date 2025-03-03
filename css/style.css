@@ -442,6 +442,7 @@ main {
     background-blend-mode: overlay;
     position: relative;
     overflow-x: hidden;
+    overflow-y: clip;
 }
 
 .features__card:nth-child(2) .features__card__image {
@@ -479,7 +480,7 @@ main {
     position: absolute;
     content: "";
     width: 100%;
-    height: 120px;
+    height: 170px;
     bottom: -1px;
     transform: skew(-75deg, 0);
     transform-origin: bottom right;
