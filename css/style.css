@@ -60,13 +60,13 @@ header {
     width: 100%;
     height: 100%;
     inset: 0;
-    scale: 0;
+    transform: scaleX(0);
     transform-origin: center center;
     transition: var(--main-transition);
 }
 
 .header__menu-link--border-top-hover:hover::before {
-    scale: 1;
+    transform: scaleX(1);
     background-color: rgb(0, 0, 0, .1);
 }
 
@@ -76,14 +76,14 @@ header {
     width: 100%;
     height: 4px;
     inset: 0;
-    scale: 0;
+    transform: scaleX(0);
     transform-origin: left;
     transition: var(--main-transition) ease-in;
     background-color: var(--main-color);
 }
 
 .header__menu-link--border-top-hover:hover::after {
-    scale: 1;
+    transform: scaleX(1);
 }
 /* Bottom of Header */
 
@@ -180,11 +180,11 @@ main {
 /* arrow animation  */
 @keyframes bounceArrow {
     0%, 10%, 20%, 50%, 80%, 100% {
-        translate: 0;
+        transform: translate(0, 0);
     }
 
     40%, 60% {
-        translate: 0 -15px;
+        transform: translate(0, -15px);
     }
 }
 
@@ -230,15 +230,15 @@ main {
 
 .section__title--hover:hover {
     color: white;
-    border-color: white;
+    border-color: transparent;
     transform: scale(.9);
-    transition: .3s .7s;
+    transition: var(--main-transition) .5s;
 }
 
 /* articles__title Animation */
 @keyframes left-move {
     50% {
-        left: 10px;
+        left: 0;
         width: 12px;
         height: 12px;
     }
@@ -253,7 +253,7 @@ main {
 
 @keyframes right-move {
     50% {
-        right: 10px;
+        right: 0;
         width: 12px;
         height: 12px;
     }
@@ -414,10 +414,6 @@ main {
     transform: scale(1.1) rotate(5deg);
 }
 
-.features {
-    margin-block-end: 4rem;
-}
-
 .features__wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -430,12 +426,13 @@ main {
     flex-flow: column;
     align-items: center;
     border: 1px solid rgb(0, 0, 0, .1);
+    background-color: white;
 }
 
 .features__card__image {
     width: 100%;
     height: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 700 / 700;
     background-image: url('../imgs/features-01.jpg');
     background-size: cover; /* Ensures the image fills the div */
     background-color: rgba(244, 64, 54, 0.6);
@@ -471,9 +468,7 @@ main {
 
 .features__card:nth-child(3) .features__card__content__btn {
     color: rgb(3, 169, 244);
-    ;
     border-color: rgb(3, 169, 244);
-    ;
 }
 
 .features__card__image::before {
@@ -484,45 +479,14 @@ main {
     bottom: -1px;
     transform: skew(-75deg, 0);
     transform-origin: bottom right;
+    transition: transform var(--main-transition);
     background-color: white;
 }
 
-/* Used animation instead of normal hover because when the skew height is 120px (looks better when the hover works) on some vw's the skew part looks broken so i had to make it 170px so it works fine across all vw but when the hover happens it looks ugly, so i made the animation part where when u hover skew part becomes 120px and when it's not hovered it's 170px at 100% */
-.features__card:not(:hover) .features__card__image::before {
-    animation: skew-not var(--main-transition) ease-in-out forwards;
-}
-
 .features__card:hover .features__card__image::before {
-    animation: skew-left var(--main-transition) ease-in-out forwards;
+    transform: skew(75deg, 0);
 }
 
-@keyframes skew-left {
-    0% {
-        transform: skew(-75deg, 0);
-        height: 120px;
-    }
-    100% {
-        transform: skew(75deg, 0);
-        height: 120px;
-    }
-    
-}
-
-@keyframes skew-not {
-    0% {
-        transform: skew(75deg, 0);
-        height: 120px;
-    }
-
-    99.9% {
-        transform: skew(-75deg, 0);
-        height: 120px;
-    }
-
-    100% {
-        height: 170px;
-    }
-}
 
 .features__card__content {
     text-align: center;

@@ -21,7 +21,7 @@
     
     /* Transitions */
     --main-transition: .3s;
-    --main-transition-alt: .7s;
+    --main-transition-alt: .5s;
 
     /* Padding */
     --main-padding: 1rem;
