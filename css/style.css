@@ -10,6 +10,9 @@ body {
     line-height: 1.5;
     font-family: 'Cairo', sans-serif;
     -webkit-font-smoothing: antialiased;
+    /* background-color: #ccc; */
+    /* background-color: whitesmoke; */
+    background-color: white;
 }
 
 body {
@@ -62,7 +65,7 @@ header {
     inset: 0;
     transform: scaleX(0);
     transform-origin: center center;
-    transition: var(--main-transition);
+    transition: var(--main-transition) ease-in;
 }
 
 .header__menu-link--border-top-hover:hover::before {
@@ -84,6 +87,98 @@ header {
 
 .header__menu-link--border-top-hover:hover::after {
     transform: scaleX(1);
+}
+
+header {
+    position: relative;
+}
+
+.mega-links {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: fit-content;
+    inset: 0;
+    top: calc(100%);
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    z-index: 100;
+    transition: all var(--main-transition) ease-in;
+    border-top: 1px solid #ccc;
+    border-bottom: 3px solid var(--main-color);
+    background-color: white;
+}
+
+.header__menu-item:nth-of-type(4):hover .mega-links {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.mega-links .image {
+    display: none;
+}
+
+.mega-links .links {
+    color: var(--main-color);
+}
+
+.mega-links .links li {
+    position: relative;
+    font-weight: bold;
+}
+
+.mega-links .links li::before {
+    position: absolute;
+    content: "";
+    /* width: 0%; */
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    inset: 0;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: all var(--main-transition) ease-in;
+    background-color: #eee;
+}
+
+.mega-links .links li:hover::before {
+    /* width: 100%; */
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.mega-links .links li a {
+    display: flex;
+    align-items: center;
+    gap: 0 .5rem;
+    padding: var(--main-padding);
+    position: relative;
+    z-index: 1;
+}
+
+.mega-links .links li a::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: #ccc;
+}
+
+.mega-links .links:last-of-type li:last-of-type a::before {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .mega-links .links:last-of-type li:last-of-type {
+        margin-bottom: 1px;
+    }
 }
 /* Bottom of Header */
 
@@ -343,7 +438,7 @@ main {
     background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
     background-size: 30px 30px;
 
-
+/* another way of "doing it" */
     /* clip-path: polygon(
     0% 100%,
     0% 100%, 2.5% 0%, 5% 100%, 7.5% 0%, 10% 100%, 12.5% 0%, 15% 100%, 17.5% 0%, 
@@ -486,7 +581,6 @@ main {
 .features__card:hover .features__card__image::before {
     transform: skew(75deg, 0);
 }
-
 
 .features__card__content {
     text-align: center;

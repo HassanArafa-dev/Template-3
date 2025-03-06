@@ -23,6 +23,21 @@
     .landing {
         min-height: calc(100vh - 72px);
     }
+
+    .mega-links {
+        flex-flow: row;
+        align-items: center;
+        padding: 1.875rem;
+        gap: 2.5rem;
+    }
+
+    .mega-links .links {
+        flex: 1;
+    }
+
+    .mega-links .links:first-of-type li:last-of-type a::before {
+        display: none;
+    }
 }
 
 @media (min-width: 992px) {
@@ -38,11 +53,23 @@
     .landing__wrapper-img {
         display: block;
     }
+
+    .mega-links .image {
+        display: block;
+    }
+
+    .mega-links .image img {
+        max-width: 300px;
+    }
 }
 
 @media (min-width: 1200px) {
     .container {
         max-width: 1170px;
+    }
+
+    .mega-links .image img {
+        max-width: 600px;
     }
 }
 
